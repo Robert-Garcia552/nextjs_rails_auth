@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
         error: true, 
         error_msg: "Incorrect username, email or password. Account may also need to be registered."
       },
-      status: 400
+      status: 401
     end
   end
 
