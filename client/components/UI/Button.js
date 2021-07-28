@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledBtn = styled.button`
-  background: ${props => props.buttonColor || '#1d66a3'};
+  background: ${props => props.buttonColor || "#1d66a3"};
   color: white;
   display: block;
   margin: 16px auto;
@@ -14,8 +14,8 @@ const StyledBtn = styled.button`
 const Button = (props) => {
   return (
     <StyledBtn
-      onClick={props.handleLogin}
       buttonColor={props.buttonColor}
+      onClick={(e) => props.handleClick(e)}
     >
       {props.buttonText}
     </StyledBtn>
