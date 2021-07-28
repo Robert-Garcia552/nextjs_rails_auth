@@ -2,14 +2,14 @@ class SessionsController < ApplicationController
   def create
     user_collection = user.map do |u|
       if u.password == params[:session][:password]
-        { "user_id" => u.id, "username" => u.username }
+        { "session_id" => u.id, "username" => u.username }
       end
     end
 
     if user_collection.compact.present?
       render json: { 
         success: true,
-        usernames: user_collection 
+        usernames: user_collection,
         }, 
         status: 200
     else
