@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const StyledBtn = styled.button`
   background: ${props => props.buttonColor || '#1d66a3'};
@@ -22,4 +22,4 @@ const Button = (props) => {
   );
 }
 
-export default Button;
+export default Button

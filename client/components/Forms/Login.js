@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import Button from '../UI/Button.js';
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import Button from '../UI/Button.js'
 
 const Form = styled.form`
   border: 1px solid;
@@ -25,8 +25,8 @@ const Error = styled.div`
 `
 
 function Login() {
-  const [user, setUser] = useState({email_or_username: '', password: ''});
-  const [error, setError] = useState({error: false, errorMsg: ''});
+  const [user, setUser] = useState({email_or_username: '', password: ''})
+  const [error, setError] = useState({error: false, errorMsg: ''})
 
   const submitLogin = () => {
     fetch('http://localhost:3000/sessions', {
@@ -103,13 +103,13 @@ function Login() {
         buttonText='Login'
         handleLogin={(user) => handleLogin(user)}
       />
-      {/* <Button 
+      <Button 
         buttonText='Sign Up'
         buttonColor='green'
         onClick={handleLogin}
-      /> */}
+      />
     </Form>
   );
 }
 
-export default Login;
+export default Login

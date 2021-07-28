@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Login from '../components/Forms/Login.js';
+import Login from '../components/Forms/Login.js'
 
-export default function Home() {
+function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,3 +35,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

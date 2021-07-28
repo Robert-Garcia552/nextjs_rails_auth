@@ -1,0 +1,17 @@
+{
+  "name": "nextjs_rails_auth",
+  "version": "1.0.0",
+  "description": "Simple login app",
+  "repository": "https://github.com/Robert-Garcia552/nextjs_rails_auth.git",
+  "author": "Robert Garcia <robgarcia552@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others \"yarn backend\" \"yarn frontend\"",
+    "backend": "cd backend & rails s",
+    "frontend": "cd client & yarn dev"
+  },
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
