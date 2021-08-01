@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Button from '../UI/Button.js'
 
@@ -53,7 +52,7 @@ function StepOne(props) {
       />
       <br/>
       <Button
-        handleClick={props.handleLogin}
+        handleClick={props.submitLogin}
         buttonText='Login'
       />
       </Form>

@@ -2,18 +2,21 @@ import { useEffect, useState } from 'react'
 import Button from '../UI/Button.js'
 
 function StepTwo(props) {
-  const [selectedUser, setUser] = useState({ session_id: '', username: '' })
+  const [selectedUser, setUser] = useState({  id: '', 
+                                              username: '', 
+                                              email: '', 
+                                              token: '' 
+                                            })
 
   useEffect(() => {
-    console.log("User selected: " + selectedUser)
-  }, [setUser]);
+  }, [selectedUser]);
 
   const handleRadio = (e) => {
-    setUser({ session_id: e.target.id, username: e.target.name })
-  }
-
-  const handleSubmit = () => {
-    alert("Logged in as: " + selectedUser.username)
+    setUser({ id: e.target.id, 
+              username: e.target.name, 
+              email: e.target.dataset.email,
+              token: e.target.dataset.token
+            })
   }
 
   return (
@@ -21,23 +24,24 @@ function StepTwo(props) {
       <h2>Please select a username to use for this session:</h2>
       {props.userCollection.map((user) => {
           return(
-            <div>
-              <input 
+            <div key={user.user_id}>
+              <input
                 type="radio" 
-                value={user.username} 
-                key={user.session_id} 
-                name={user.username} 
-                id={user.session_id} 
-                onChange={handleRadio} 
-                checked={ user.session_id == selectedUser.session_id } 
+                value={user.username}
+                name={user.username}
+                id={user.user_id}
+                data-email={user.email}
+                data-token={user.token}
+                onChange={handleRadio}
+                checked={ user.user_id == selectedUser.id }
               />
-              <label for={user.username}>{user.username}</label>
+              <label htmlFor={user.username}>{user.username}</label>
             </div>
-          ) 
+          )
         })
       }
       <Button
-        handleClick={handleSubmit}
+        handleClick={(e) => props.createSession(e, selectedUser.id, selectedUser.token)}
         buttonText='Submit'
       />
     </form>
