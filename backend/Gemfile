@@ -13,6 +13,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Using bcrypt to encrypt passwords
 gem 'bcrypt', '~> 3.1.7'
 
+# Tokens for sessions
+gem 'jwt'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible

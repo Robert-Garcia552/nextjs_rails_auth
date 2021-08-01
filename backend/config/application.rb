@@ -37,7 +37,7 @@ module Backend
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins ENV.fetch("CLIENT_URL")
-        resource '*', :headers => :any, :methods => [:post, :options]
+        resource '*', :headers => :any, :methods => [:post, :delete, :options]
       end
     end
   end
