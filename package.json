@@ -9,7 +9,13 @@
   "scripts": {
     "dev": "concurrently --kill-others \"yarn backend\" \"yarn frontend\"",
     "backend": "cd backend & rails s",
-    "frontend": "cd client & yarn dev"
+    "frontend": "cd client & yarn dev",
+    "install_apps": "concurrently \"yarn install_backend\" \"yarn install_frontend\"",
+    "install_backend": "cd backend && bundle",
+    "install_frontend": "cd client && yarn",
+    "migrate": "cd backend && rails db:create db:migrate",
+    "migrate_tests": "cd backend && rails db:create db:migrate RAILS_ENV=tests",
+    "rails_tests": "cd backend && rspec"
   },
   "dependencies": {
     "concurrently": "^6.2.0"

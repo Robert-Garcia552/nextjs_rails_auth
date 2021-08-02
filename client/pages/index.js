@@ -5,7 +5,7 @@ function Home() {
   return (
     <Layout>
       <Link href="/login">
-        <a>Login</a>
+        <a>Please click here to Login</a>
       </Link>
     </Layout>
   )
