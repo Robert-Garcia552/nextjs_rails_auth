@@ -41,6 +41,8 @@ Backend was developed using the following:
 
 PostgreSQL was utilized for the database. - [Read more here](https://www.postgresql.org/)
 
+Seed Data is provided just `cd backend` and `rails db:seed` after creating and migrating the database.
+
 ### Environment Variables
 
 Developer must add .env under `/backend` directory with their own variable values for:
