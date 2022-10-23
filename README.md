@@ -1,6 +1,4 @@
-# Project Name
-
-Next.js Rails Authentication
+# Next.JS Rails Authentication
 
 ## Author
 
